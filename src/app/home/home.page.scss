@@ -1,0 +1,41 @@
+ion-toolbar, ion-fab-button{
+  --background: linear-gradient(135deg, rgba(42,42,133,1),purple);
+}
+
+ion-toolbar{
+  box-shadow: 0rem 0.2rem 1rem 0.1rem lightgrey;
+  color: white;
+}
+
+.galeria{
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.image:hover img{
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  transition: filter 0.5% ease-in-out;
+}
+
+.image span{
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 23%;
+}
+
+.image:hover span{
+  display: block;
+}
+
+.image span ion-button{
+  width: 6rem;
+  height: 2rem;
+  cursor: pointer;
+  margin: 0.2rem
+}
+
+
