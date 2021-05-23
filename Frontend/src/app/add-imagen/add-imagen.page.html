@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline" (click)='CerrarModal()'></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <form [formGroup]="agregar">
+    <div class="picker">
+      <img class="image ion-text-center" *ngIf="selectedImage" (click)="getUrlFileImage()" src="{{selectedImage}}"/>
+      <ion-button color="primary" expand="block" fill="clear" shape="round" (click)="getUrlFileImage()" *ngIf="!selectedImage">
+        <ion-label>Subir foto</ion-label>
+      </ion-button>
+    </div>
+    <input type="file" accept="image/jpeg" #imageFile (change)="ImageUser($event)">
+    <ion-button *ngIf="seleccion && selectedImage" (click)="UrlImage()" expand="block"  shape="round" >Confirmar</ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Titulo</ion-label>
+            <ion-input formControlName="title" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Descipcion</ion-label>
+            <ion-textarea rows="3" formControlName="descripcion"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button color="success" type="submit" expand="block"(click)="addImage()">Agregar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
