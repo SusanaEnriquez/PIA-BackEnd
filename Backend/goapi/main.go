@@ -10,7 +10,7 @@ import (
 )
 
 func createImage(c echo.Context) error {
-	image := new(ImageResponse)
+	image := new(Imagen)
 	image.Titulo = c.FormValue("titulo")
 	image.Descripcion = c.FormValue("descripcion")
 	image.UrlImage = c.FormValue("urlimage")
@@ -28,7 +28,7 @@ func getImage(c echo.Context) error {
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos: ", err)
 	}
-	var res ImageResponse
+	var res Imagen
 	db.First(&res, id)
 	return c.JSON(http.StatusOK, res)
 }
@@ -39,10 +39,10 @@ func updateImage(c echo.Context) error {
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos: ", err)
 	}
-	var res ImageResponse
+	var res Imagen
 	db.First(&res, id)
 
-	var params = new(ImageResponse)
+	var params = new(Imagen)
 	params.Titulo = c.FormValue("titulo")
 	params.Descripcion = c.FormValue("descripcion")
 	params.UrlImage = c.FormValue("urlimage")
@@ -66,7 +66,7 @@ func deleteImage(c echo.Context) error {
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos: ", err)
 	}
-	var res ImageResponse
+	var res Imagen
 	db.Where("id = ?", id).Delete(&res)
 	return c.NoContent(http.StatusNoContent)
 }
@@ -76,7 +76,7 @@ func getAllImage(c echo.Context) error {
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos: ", err)
 	}
-	var res []ImageResponse
+	var res []Imagen
 	// Encuentra fila con llave primaria ingresada en la variable id
 	db.Find(&res)
 	return c.JSON(http.StatusOK, res)

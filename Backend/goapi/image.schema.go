@@ -1,7 +1,7 @@
 package main
 
 type (
-	ImageResponse struct {
+	Imagen struct {
 		ID          int    `json:"id"`
 		Titulo      string `json:"titulo"`
 		Descripcion string `json:"descripcion"`
