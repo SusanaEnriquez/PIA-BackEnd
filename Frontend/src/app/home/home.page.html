@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      PIA
+      <!-- PIA -->
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,14 +9,14 @@
  <ion-content [fullscreen]="true">
   <ion-grid>
     <ion-row>
-      <ion-col size='6' *ngFor='let imagen of imagenes'>
+      <ion-col size-lg="3" size-xs='6' *ngFor='let imagen of imagenes'>
 
         <div>
           <p class="image">
             <img class="galeria" src="{{imagen}}" alt="" >
             <span>
                 <ion-button color="primary" (click)='EditarImagen(imagen)'>INFO</ion-button>
-                <ion-button color="danger" (click)='EliminarImagen()'>DELETE</ion-button>
+                <ion-button color="danger" (click)='EliminarImagen()'>ELIMINAR</ion-button>
             </span>
           </p>
         </div>
