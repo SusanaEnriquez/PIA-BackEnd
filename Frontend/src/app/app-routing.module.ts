@@ -8,13 +8,14 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
     path: 'imagen-modal',
     loadChildren: () => import('./imagen-modal/imagen-modal.module').then( m => m.ImagenModalPageModule)
-  },  {
+  },
+  {
     path: 'add-imagen',
     loadChildren: () => import('./add-imagen/add-imagen.module').then( m => m.AddImagenPageModule)
   },

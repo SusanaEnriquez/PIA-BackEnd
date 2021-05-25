@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { LoginPage } from '../login/login.page';
 
 
@@ -12,6 +12,7 @@ export class WelcomePage implements OnInit {
 
   constructor(
     public modalCtrl: ModalController,
+    public alertCtrl: AlertController
   ) { }
 
   ngOnInit() {
@@ -27,5 +28,14 @@ export class WelcomePage implements OnInit {
     })
 
     return await modal.present();
+  }
+
+  async nosotros(){
+    const alert = await this.alertCtrl.create({
+        header: 'GaleriaDB',
+        message: 'GaleriaDB es una app creada para que almacenes tus memes',
+        buttons: ['OK']
+    });
+    await alert.present();
   }
 }
