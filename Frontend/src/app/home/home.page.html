@@ -13,7 +13,7 @@
 
         <div>
           <p class="image">
-            <img class="galeria" src="{{imagen}}" alt="" >
+            <img class="galeria" src="{{imagen.urlimage}}" alt="" >
             <span>
                 <ion-button color="primary" (click)='EditarImagen(imagen)'>INFO</ion-button>
                 <ion-button color="danger" (click)='EliminarImagen()'>ELIMINAR</ion-button>
@@ -24,7 +24,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
+  <ion-button (click)='obtenerImagen()'>prueba</ion-button>
 </ion-content>
 
 <ion-fab vertical="bottom" horizontal="end" slot="fixed">

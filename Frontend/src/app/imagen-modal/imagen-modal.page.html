@@ -5,10 +5,12 @@
 </ion-header>
 
 <ion-content>
-  <img src="{{imagenHome}}" alt="">
-  <p>Título:</p>
-  <input type="text" placeholder="Cambiar titulo..." >
-  <p>Descripción:</p>
-  <textarea cols="20" rows="2" placeholder="Cambiar descripción..." ></textarea>
+  <img src="{{ imagenHome.urlimage }}" alt="">
+  <h4>Título:</h4>
+  <p> {{ imagenHome.titulo }} </p>
+  <input type="text" id="titulo" placeholder="Cambiar titulo..." >
+  <h4>Descripción:</h4>
+  <p> {{ imagenHome.descripcion }} </p>
+  <textarea cols="20" rows="2" id="descripcion" placeholder="Cambiar descripción..." ></textarea>
   <input type="submit" value="Guardar" (click)="Save()">
 </ion-content>
