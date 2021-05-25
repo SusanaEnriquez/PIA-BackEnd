@@ -50,6 +50,12 @@ func updateImage(c echo.Context) error {
 	params.Descripcion = c.FormValue("descripcion")
 	params.URL = c.FormValue("urlimage")
 
+	fmt.Println("OLA, YA LLEGO LA VERGAAAAAAAAAA")
+	fmt.Println(params.ID)
+	fmt.Println(params.Titulo)
+	fmt.Println(params.Descripcion)
+	fmt.Println(params.URL)
+
 	if len(params.Titulo) > 0 && params.Titulo != "" {
 		res.Titulo = params.Titulo
 	}

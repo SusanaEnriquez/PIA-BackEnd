@@ -28,21 +28,38 @@ export class ImagenModalPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  Save(){
+  Save(id){
     this.modalCtrl.dismiss();
     
-    var titulo = document.getElementById("titulo").nodeValue;
-    var descripcion = document.getElementById("descripcion").nodeValue;
+    //var   num1= ((document.getElementById("num1") as HTMLInputElement).value);
+    this.imagen.id = id;
+    this.imagen.titulo = ((document.getElementById("titulo") as HTMLInputElement).value);
+    this.imagen.descripcion = ((document.getElementById("descripcion") as HTMLInputElement).value);
+    
+    console.log(this.imagen.titulo);
+    console.log(this.imagen.descripcion);
+    console.log(this.imagen);
+    
+    console.log(this.apiUrl + id);
+
     /*
-    this.http.post<Imagen>(this.apiUrl + this.imagenHome, {
+    this.http.put<Imagen>(this.apiUrl + id, {
       "titulo": titulo,
       "descripcion": descripcion
-    }).subscribe(this.imagenes => console.log('Image successful'));
+    })
     */
-    /*
-    document.getElementById("titulo").nodeValue = "";
-    document.getElementById("descripcion").nodeValue = "";
-    */
+    
+    this.actualizarImagen(this.imagen);
+
+    (document.getElementById("titulo") as HTMLInputElement).value = "";
+    (document.getElementById("descripcion") as HTMLInputElement).value = "";
+    
+  }
+
+  actualizarImagen(imagen:Imagen):Observable<Imagen>{
+    console.log("Si entre y tengo esto");
+    console.log(imagen);
+    return this.http.put<Imagen>(this.apiUrl, imagen);
   }
 
 }
