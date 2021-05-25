@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -13,7 +14,7 @@ func createImage(c echo.Context) error {
 	image := new(Imagen)
 	image.Titulo = c.FormValue("titulo")
 	image.Descripcion = c.FormValue("descripcion")
-	image.UrlImage = c.FormValue("urlimage")
+	image.URL = c.FormValue("urlimage")
 	db, err := ConnectDB()
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos: ", err)
@@ -24,7 +25,9 @@ func createImage(c echo.Context) error {
 
 func getImage(c echo.Context) error {
 	id, _ := strconv.Atoi(c.Param("id"))
+	fmt.Println("antes de conectarse a la bd")
 	db, err := ConnectDB()
+	fmt.Println("despues de conectarse a la bd")
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos: ", err)
 	}
@@ -45,7 +48,7 @@ func updateImage(c echo.Context) error {
 	var params = new(Imagen)
 	params.Titulo = c.FormValue("titulo")
 	params.Descripcion = c.FormValue("descripcion")
-	params.UrlImage = c.FormValue("urlimage")
+	params.URL = c.FormValue("urlimage")
 
 	if len(params.Titulo) > 0 && params.Titulo != "" {
 		res.Titulo = params.Titulo
@@ -53,8 +56,8 @@ func updateImage(c echo.Context) error {
 	if len(params.Descripcion) > 0 && params.Descripcion != "" {
 		res.Descripcion = params.Descripcion
 	}
-	if len(params.UrlImage) > 0 && params.UrlImage != "" {
-		res.UrlImage = params.UrlImage
+	if len(params.URL) > 0 && params.URL != "" {
+		res.URL = params.URL
 	}
 	db.Save(&res)
 	return c.JSON(http.StatusOK, res)
@@ -62,6 +65,7 @@ func updateImage(c echo.Context) error {
 
 func deleteImage(c echo.Context) error {
 	id, _ := strconv.Atoi(c.Param("id"))
+	fmt.Print(id)
 	db, err := ConnectDB()
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos: ", err)
@@ -72,13 +76,19 @@ func deleteImage(c echo.Context) error {
 }
 
 func getAllImage(c echo.Context) error {
+	fmt.Println("antes de conectarse a la bd")
 	db, err := ConnectDB()
+	fmt.Println("despues de conectarse a la bd")
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos: ", err)
 	}
 	var res []Imagen
+
+	fmt.Println(res)
 	// Encuentra fila con llave primaria ingresada en la variable id
 	db.Find(&res)
+	fmt.Print("Esto contiene el res: ")
+	fmt.Println(res)
 	return c.JSON(http.StatusOK, res)
 }
 

@@ -5,7 +5,7 @@ type (
 		ID          int    `json:"id"`
 		Titulo      string `json:"titulo"`
 		Descripcion string `json:"descripcion"`
-		UrlImage    string `json:"urlimage"`
+		URL         string `json:"urlimage"`
 	}
 
 	TokenRsponse struct {
