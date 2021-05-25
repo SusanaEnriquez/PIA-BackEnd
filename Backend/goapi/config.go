@@ -5,6 +5,7 @@ import (
 
 	"gorm.io/driver/sqlserver"
 	"gorm.io/gorm"
+	"gorm.io/gorm/schema"
 )
 
 /*
@@ -18,7 +19,11 @@ func ConnectDB() (*gorm.DB, error) {
 
 	fmt.Println("si entre")
 	// Crear connection string
-	dsn := "user:pass@tcp(127.0.0.1:3306)/BackEndDB?charset=utf8mb4&parseTime=True&loc=Local"
-	db, err := gorm.Open(sqlserver.Open(dsn), &gorm.Config{})
+	dsn := "sqlserver:DESKTOP-CG9D12H;database=BackEndDB"
+	db, err := gorm.Open(sqlserver.Open(dsn), &gorm.Config{
+		NamingStrategy: schema.NamingStrategy{
+			SingularTable: true,
+		},
+	})
 	return db, err
 }
