@@ -1,10 +1,10 @@
-/*Primero seleccionamos y ejecutamos esta linea*/
+/*1.-Primero seleccionamos y ejecutamos esta linea*/
 CREATE DATABASE BackEndDB;
 
-/*Usar la base de datos*/
+/*2.-Usar la base de datos*/
 USE BackEndDB
 
-/*Despues seleccionamos la base de datos donde trabajaremos y
+/*3.-Despues seleccionamos la base de datos donde trabajaremos y
 	ejecutamos las siguientes lineas	*/
 CREATE TABLE Imagen (
 	id int IDENTITY(1,1) PRIMARY KEY,
@@ -13,10 +13,10 @@ CREATE TABLE Imagen (
 	URL varchar(max)
 );
 
-/*Para activar el id auto incrementable*/
+/*4.-Para activar el id auto incrementable*/
 set identity_insert "Imagen" on
 
-/*Registro de prueba*/
+/*5.-Despues ejecutar las siguientes lineas para tener los datos*/
 INSERT INTO Imagen (Titulo, Descripcion, URL) 
 	VALUES ('Situacion actual', 'Imagen que describe nuestra situacion actual', 
 		'https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/images%2Fcd123fb3-9e3e-4361-fdc5-874bbc9388af.jpg?alt=media&token=188f27fe-4bdb-419a-ad60-952f76dd0d76')

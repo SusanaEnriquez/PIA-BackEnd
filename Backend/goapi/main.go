@@ -10,6 +10,7 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
+//Funcion para crear una nueva imagen y subirla a la base de datos
 func createImage(c echo.Context) error {
 	image := new(Imagen)
 	image.Titulo = c.FormValue("titulo")
@@ -23,11 +24,10 @@ func createImage(c echo.Context) error {
 	return c.JSON(http.StatusCreated, image)
 }
 
+//Funcion para conseguir una imagen en especifico
 func getImage(c echo.Context) error {
 	id, _ := strconv.Atoi(c.Param("id"))
-	fmt.Println("antes de conectarse a la bd")
 	db, err := ConnectDB()
-	fmt.Println("despues de conectarse a la bd")
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos: ", err)
 	}
@@ -36,6 +36,7 @@ func getImage(c echo.Context) error {
 	return c.JSON(http.StatusOK, res)
 }
 
+//Funcion para actualizar una imagen
 func updateImage(c echo.Context) error {
 	id, _ := strconv.Atoi(c.Param("id"))
 	db, err := ConnectDB()
@@ -50,12 +51,6 @@ func updateImage(c echo.Context) error {
 	params.Descripcion = c.FormValue("descripcion")
 	params.URL = c.FormValue("urlimage")
 
-	fmt.Println("OLA, YA LLEGUEEEEEEEEEE")
-	fmt.Println(params.ID)
-	fmt.Println(params.Titulo)
-	fmt.Println(params.Descripcion)
-	fmt.Println(params.URL)
-
 	if len(params.Titulo) > 0 && params.Titulo != "" {
 		res.Titulo = params.Titulo
 	}
@@ -69,6 +64,7 @@ func updateImage(c echo.Context) error {
 	return c.JSON(http.StatusOK, res)
 }
 
+//Funcion para eliminar una imagen
 func deleteImage(c echo.Context) error {
 	id, _ := strconv.Atoi(c.Param("id"))
 	fmt.Print(id)
@@ -81,10 +77,9 @@ func deleteImage(c echo.Context) error {
 	return c.NoContent(http.StatusNoContent)
 }
 
+//Funcion para conseguir todas las imagenes de la bd
 func getAllImage(c echo.Context) error {
-	fmt.Println("antes de conectarse a la bd")
 	db, err := ConnectDB()
-	fmt.Println("despues de conectarse a la bd")
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos: ", err)
 	}

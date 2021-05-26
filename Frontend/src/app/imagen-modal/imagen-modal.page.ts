@@ -28,6 +28,7 @@ export class ImagenModalPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
+  //Funcion para guardar lo cambiado 
   Save(id){
     this.modalCtrl.dismiss();
     
@@ -42,15 +43,6 @@ export class ImagenModalPage implements OnInit {
     
     console.log(this.apiUrl + id);
 
-    /*
-    this.http.put<Imagen>(this.apiUrl + id, {
-      "titulo": titulo,
-      "descripcion": descripcion
-    })
-    */
-    
-    //this.actualizarImagen(this.imagen);
-
     (document.getElementById("titulo") as HTMLInputElement).value = "";
     (document.getElementById("descripcion") as HTMLInputElement).value = "";
     
@@ -62,18 +54,13 @@ export class ImagenModalPage implements OnInit {
        })
     }).then(response => response.json())
   }
-  /*
-  actualizarImagen(imagen:Imagen):Observable<Imagen>{
-    console.log("Si entre y tengo esto");
-    console.log(imagen);
-    return this.http.put<Imagen>(this.apiUrl, imagen);
-  }
-  */
+
 }
 
+//Interface donde tiene la estructura de una imagen en la base de datos
 export interface Imagen {
-  id: number; // Contiene la frase
+  id: number; 
   titulo: string;
-  descripcion: string; // Identificador la frase aleatoria
-  url: string; // URL que contiene el ID y permite recuperar la frase
+  descripcion: string;
+  url: string; 
 }

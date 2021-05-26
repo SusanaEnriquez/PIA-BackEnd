@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"gorm.io/driver/sqlserver"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
@@ -17,7 +15,6 @@ var database = "BackEndDB"
 
 func ConnectDB() (*gorm.DB, error) {
 
-	fmt.Println("si entre")
 	// Crear connection string
 	dsn := "sqlserver:DESKTOP-CG9D12H;database=BackEndDB"
 	db, err := gorm.Open(sqlserver.Open(dsn), &gorm.Config{

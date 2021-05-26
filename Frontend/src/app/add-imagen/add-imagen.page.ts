@@ -49,6 +49,8 @@ export class AddImagenPage implements OnInit {
     });
   }
 
+  /*Funcion para añadir una nueva imagen
+  y hace una peticion POST */
   addImage(){
     if(!this.agregar.valid){
       return;
@@ -67,12 +69,12 @@ export class AddImagenPage implements OnInit {
     this.modalCtrl.dismiss();
   }
 
+  //Funcion para cerrar el componente donde se encuentra
   CerrarModal(){
     this.modalCtrl.dismiss();
   }
 
   //Funciones para obtener imagenes
-
   ImageUser(event: Event) {
     this.seleccion = true;
     const image = (event.target as HTMLInputElement).files[0];
@@ -89,6 +91,7 @@ export class AddImagenPage implements OnInit {
    fr.readAsDataURL(image);
  }
 
+ 
   UrlImage(){
     if(this.selectedImage){
       const httpImage =`${this.downloadURL}`;

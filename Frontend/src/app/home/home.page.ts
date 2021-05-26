@@ -20,23 +20,16 @@ export class HomePage {
   public imagenes: Imagen[];
   private apiUrl = "http://localhost:1323/images";
 
+  //En el constructor llamamos la peticion get
+  // para conseguir todas las imagenes de la bd
   constructor(private modalCtrl: ModalController, private http: HttpClient, public alertCtrl: AlertController) {
     http.get<Imagen[]>(this.apiUrl).subscribe(result => {
       this.imagenes = result;
     }, error => console.error(error));
   }
-  /*
-  imagenes = [
-    'assets/imagenes/meme1.jpg',
-    'assets/imagenes/meme2.jpg',
-    'assets/imagenes/meme3.jpg',
-    'assets/imagenes/meme4.jpg',
-    'assets/imagenes/meme5.png',
-    'assets/imagenes/meme6.jpg',
-    'assets/imagenes/meme7.png',
-    'assets/imagenes/meme8.jpg'
-  ];
-  */
+  
+  //Funcion para abrir otro componente y 
+  // enviarle los datos de la imagen que le hizo "click"
   EditarImagen(imagen){
     this.modalCtrl.create({
       component: ImagenModalPage,
@@ -46,18 +39,20 @@ export class HomePage {
     }).then(modal => modal.present());
   }
 
+  //Funcion en donde abre el componente para añadir otra imagen
   AgregarImagen() {
     this.modalCtrl.create({
       component: AddImagenPage
     }).then(modal => modal.present());
   }
 
+  //Funcion que abre el alert
   EliminarImagen(imagen) {
     this.presentAlertConfirm(imagen);
     
   }
 
-
+  //Funcion para conseguir una imagen
   public getImagen(): Observable<Imagen> {
     return this.http.get<Imagen>(this.apiUrl);
   }
@@ -66,6 +61,7 @@ export class HomePage {
     console.log(this.imagenes);
   }
 
+  //Funcion donde abre una alerta y te pregunta si quieres eliminar la imagen
   async presentAlertConfirm(imagen) {
     const alert = await this.alertCtrl.create({
       cssClass: 'my-custom-class',
@@ -96,9 +92,10 @@ export class HomePage {
   }
 }
 
+//Interface donde tiene la estructura de una imagen en la base de datos
 export interface Imagen {
-  id: number; // Contiene la frase
+  id: number;
   titulo: string;
-  descripcion: string; // Identificador la frase aleatoria
-  url: string; // URL que contiene el ID y permite recuperar la frase
+  descripcion: string;
+  url: string;
 }
