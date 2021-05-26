@@ -69,6 +69,37 @@ Pagina inicial despues del login de la app
 
 ## Manual Tecnico
 
-Peticion GET
+Meotodo Request: *GET*
+
+Parametros de la URL: *http://localhost:1323/images*
 
 <img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2Fget.PNG?alt=media&token=61354d9b-4d71-4b0e-a55c-ead6de705901">
+
+Meotodo Request: *GET* a un solo id
+
+Parametros de la URL: *http://localhost:1323/images/20*
+
+<img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2Fget20.PNG?alt=media&token=20b092d5-488c-466a-8b32-61ceee9144fa">
+
+Metodo Request: *POST*
+
+Parametros de la URL: *http://localhost:1323/images?titulo=NuevoTitulo&descripcion=NuevaDescripcion&urlimage=https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2Fget20.PNG?alt=media%26token=20b092d5-488c-466a-8b32-61ceee9144fa*
+
+Parametros del body: *titulo, descripcion, urlimage*
+
+<img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2Fpost.PNG?alt=media&token=14259e01-f72b-4056-9f71-e8021126be50">
+
+
+Metodo Request: *PUT*
+
+Parametros de la URL: *http://localhost:1323/images/15?titulo=TituloNuevo&descripcion=DescripcionNueva*
+
+Parametros del body: *titulo, descripcion*
+
+<img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2Fput.PNG?alt=media&token=60728b01-4e79-4623-a0c4-ec710102d2b8">
+
+Metodo Request: *DELETE*
+
+Parametros de la URL: *http://localhost:1323/images/20*
+
+<img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2Fdelete.PNG?alt=media&token=206f333a-a657-45cd-bd1b-fb07173dc4f3">
