@@ -57,8 +57,12 @@ Despues de un tiempo nos mostrara el siguiente mensaje y nos abrira una pestaña
 
 Para poder ver la apliación de manera correcta tenemos que darle al "boton izquierdo" e "inspeccionar"
 
-<img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2FCaptura5.PNG?alt=media&token=cb3abbee-1ec8-49b1-8db5-958079a063f9">
+<img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2FCapturaenmorado.PNG?alt=media&token=e770ed0c-e9a6-4abe-a101-f2f747aacc93">
 
 Despues de esto ya podriamos continuar con la navegacion en nuestro Front End
 
-<img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2FCaptura6.PNG?alt=media&token=b0432caa-cac7-4068-bbd8-9c4c0739ceaa">
+<img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2Ffinaly.PNG?alt=media&token=9e10ff43-a01c-4782-bc65-a3f6010d6b0f">
+
+Pagina inicial despues del login de la app
+
+<img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2Flogin.PNG?alt=media&token=82e286bd-f049-40cb-a4e0-d6a6fc747da8">
