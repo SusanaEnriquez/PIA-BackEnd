@@ -10,6 +10,7 @@ import { CameraResultType, CameraSource } from '@capacitor/camera';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
+import { HttpParams, HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-add-imagen',
@@ -28,7 +29,7 @@ export class AddImagenPage implements OnInit {
   seleccion = true;
 
   constructor(private platform: Platform, private storage: AngularFireStorage,
-    private modalCtrl: ModalController, private router: Router) { }
+    private modalCtrl: ModalController, private http: HttpClient) { }
 
   ngOnInit() {
 
@@ -49,6 +50,19 @@ export class AddImagenPage implements OnInit {
   }
 
   addImage(){
+    if(!this.agregar.valid){
+      return;
+    }
+    this.url = this.agregar.value.imagen;
+    console.log('Image',this.url);
+  const payload = new HttpParams()
+  .set("titulo", this.agregar.value.title)
+  .set("descripcion", this.agregar.value.descripcion)
+  .set("urlimage", this.url);
+    console.log("titulo: ", this.agregar.value.title, "descripcion: ", this.agregar.value.descripcion, "urlimage: ", this.agregar.value.imagen);
+    console.log("FORM", this.agregar.value);
+    this.http.post<any>('http://localhost:1323/images', payload)
+    .subscribe(() => console.log('Image successful'))
     this.agregar.reset();
     this.modalCtrl.dismiss();
   }
