@@ -1,3 +1,15 @@
+# INTEGRANTES DEL EQUIPO
+
+Juan Jose Castro Rosales            1854434
+
+Susana Enriquez Godina              1841762
+
+Orlando Javier Medina Meléndez      1848182
+
+Leonardo Gadiel Mendoza Contreras   1853343
+
+Dibanhi Sarai Rodriguez Bravo       1848692
+
 # PIA-BackEnd
 
 #Requerimientos de la App
