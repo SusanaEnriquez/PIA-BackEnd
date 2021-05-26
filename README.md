@@ -31,6 +31,10 @@ Para poder trabajar con firebase: `npm install firebase @angular/fire`
 4. Para instalar splash-screen: `npm install @ionic-native/splash-screen`
 5. Para instalar camera, storage, filesystem: `npm install @capacitor/camera @capacitor/storage @capacitor/filesystem`
 
+## Instalar la base de datos
+
+Despues en la carpeta de Back End tenemos un archivo llamado `BackEndDb.sql` y seguir las instrucciones que vienen en el archivo
+
 ## Iniciar la aplicación
 
 Para ejecutar la aplicacion tenemos que abrir dos cmd´s
