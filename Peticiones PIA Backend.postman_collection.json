@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "a4640e68-9869-4e6c-8c2c-5b8fa46729b3",
+		"name": "Peticiones PIA Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Images",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1323/images",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Images ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1323/images/25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"images",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Images",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "titulo",
+							"value": "Aqui va el titulo de la imagen",
+							"type": "text"
+						},
+						{
+							"key": "descripcion",
+							"value": "Descripcion de la imagen",
+							"type": "text"
+						},
+						{
+							"key": "urlimage",
+							"value": "Url de la imagen (en front se obtiene la url de la imagen subida a firebase desde el forms)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1323/images",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"images"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Images",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1323/images/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"images",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Images",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "titulo",
+							"value": "Titulo Nuevo",
+							"type": "text"
+						},
+						{
+							"key": "descripcion",
+							"value": "Descripcion Nueva",
+							"type": "text"
+						},
+						{
+							"key": "urlimage",
+							"value": "Url de la imagen nueva",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:1323/images/56",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"images",
+						"56"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
