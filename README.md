@@ -66,3 +66,9 @@ Despues de esto ya podriamos continuar con la navegacion en nuestro Front End
 Pagina inicial despues del login de la app
 
 <img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2Flogin.PNG?alt=media&token=82e286bd-f049-40cb-a4e0-d6a6fc747da8">
+
+## Manual Tecnico
+
+Peticion GET
+
+<img src="https://firebasestorage.googleapis.com/v0/b/base-labam.appspot.com/o/Github%2Fget.PNG?alt=media&token=61354d9b-4d71-4b0e-a55c-ead6de705901">
