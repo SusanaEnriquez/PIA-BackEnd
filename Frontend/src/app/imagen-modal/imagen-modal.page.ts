@@ -49,19 +49,26 @@ export class ImagenModalPage implements OnInit {
     })
     */
     
-    this.actualizarImagen(this.imagen);
+    //this.actualizarImagen(this.imagen);
 
     (document.getElementById("titulo") as HTMLInputElement).value = "";
     (document.getElementById("descripcion") as HTMLInputElement).value = "";
     
+    return fetch(this.apiUrl + id, {
+        method: 'PUT',
+        body:JSON.stringify( {
+          'titulo': this.imagen.titulo,
+          'descripcion': this.imagen.descripcion
+       })
+    }).then(response => response.json())
   }
-
+  /*
   actualizarImagen(imagen:Imagen):Observable<Imagen>{
     console.log("Si entre y tengo esto");
     console.log(imagen);
     return this.http.put<Imagen>(this.apiUrl, imagen);
   }
-
+  */
 }
 
 export interface Imagen {
